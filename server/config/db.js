@@ -1,0 +1,1 @@
+module.exports={"URI": "mongodb+srv://imankhan_user:zQR1E5HluTsPJxE3@cluster0.sxrpipc.mongodb.net/itinerary_planner"}

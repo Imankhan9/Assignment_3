@@ -1,0 +1,53 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<div class ="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+        <h1><%= title %></h1>
+
+        <form class="form" method="post">
+            <div class="form-group">
+                <label for="planTextfield"> Plan</label>
+                <input type="text" class="form-control"
+                id="planTextfield"
+                placeholder="Enter name of Activity"
+                name="plan" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dateTextfield"> Date</label>
+                <input type="text" class="form-control"
+                id="dateextfield"
+                placeholder="Date"
+                name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time"> Time</label>
+                <input type="text" class="form-control"
+                id="timeTextfield"
+                placeholder="Time"
+                name="time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="notesTextfield"> Notes</label>
+                <input type="notes" class="form-control"
+                id="notesTextfield"
+                placeholder="Notes"
+                name="notes" required>
+            </div>
+
+            <br>
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-edit"></i> Add
+            </button>
+            <a href="/plans" class="btn btn-warning">
+                <i class="fas fa-undo"></i> Cancel
+            </a>
+        </form>
+    </div>
+</div>
+
+<%- include ../partials/footer.ejs %>
