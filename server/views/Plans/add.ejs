@@ -4,9 +4,22 @@
 <div class ="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
+
+        <!-- Title -->
         <h1><%= title %></h1>
 
-        <form class="form" method="post">
+         <form class="form" method="post">
+
+            <!-- Destination input -->
+            <div class="form-group">
+                <label for="destinationTextfield"> Destination</label>
+                <input type="text" class="form-control"
+                id="destinationTextfield"
+                placeholder="Enter Destination"
+                name="destination" required>
+            </div>
+
+            <!--Plan input -->
             <div class="form-group">
                 <label for="planTextfield"> Plan</label>
                 <input type="text" class="form-control"
@@ -15,6 +28,7 @@
                 name="plan" required>
             </div>
 
+            <!-- Date Input -->
             <div class="form-group">
                 <label for="dateTextfield"> Date</label>
                 <input type="text" class="form-control"
@@ -23,6 +37,7 @@
                 name="date" required>
             </div>
 
+            <!-- Time Input -->
             <div class="form-group">
                 <label for="time"> Time</label>
                 <input type="text" class="form-control"
@@ -31,6 +46,7 @@
                 name="time" required>
             </div>
 
+            <!-- Notes Input -->
             <div class="form-group">
                 <label for="notesTextfield"> Notes</label>
                 <input type="notes" class="form-control"
@@ -40,9 +56,13 @@
             </div>
 
             <br>
+            
+            <!-- Submit Button -->
             <button class="btn btn-primary" type="submit">
                 <i class="fas fa-edit"></i> Add
             </button>
+
+            <!-- Cancel button retunrs user back to plans page -->
             <a href="/plans" class="btn btn-warning">
                 <i class="fas fa-undo"></i> Cancel
             </a>

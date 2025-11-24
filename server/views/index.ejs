@@ -1,12 +1,21 @@
 <%- include('partials/header') %>
 <%- include('partials/main_nav') %>
 
+
+<!-- Main landing section of the website -->
 <main>
-  <div class="jumbotron">
-    <h1 class="display-4">Welcome to the <%= title %> page </h1>
-    <p class="lead"> Start planning now for your next trip!</p>
+  <div class="jumbotron mt-5">
+  <h1 class="display-4" style="text-align: center; font-family: 'Copperplate', fantasy; font-weight: 200;">
+      Welcome to the <%= title %> page
+  </h1>
+
+    <p class="lead" style="text-align: center; font-family: 'Papyrus', fantasy; font-weight: 200;">
+        Start planning now for your next trip!
+    </p>
+
+    <!-- Button to navigate to the itinerary planner page -->
     <hr class="my-4">
-    <p class="lead">
+    <p class="lead text-center">
       <a class="btn btn-primary btn-lg" href="/plans" role="button"> Start Planning!</a>
     </p>
   </div>

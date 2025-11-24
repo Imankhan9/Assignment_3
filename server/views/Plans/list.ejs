@@ -5,40 +5,65 @@
 <!-- Main Content for displaying my database-->
 <main class="container mt-5">
     <div class="row">
+
         <div class="offset-md-1 col-md-10">
-            <h1 style=" text-align: center; font-family: 'Papyrus', fantasy; font-weight: 200 ;" >
-                <%= title %>
-                 <a href="/plans/add" class="btn btn-dark mb-3" role="button">
+
+            <!-- Page Title and Destination Heading -->
+            <h1 style=" text-align: center; font-family: 'Garamond', serif; font-weight: 200 ;" >
+               <%= title %>
+
+                <!-- Show destination only if at least one plan exists -->
+               <% if (PlanList.length > 0) { %>
+                     <div style="font-size: 40px; font-weight: bold;">
+
+                        <!-- Red pin awesome icon -->
+                         <i class="fa-sharp fa-solid fa-location-dot text-danger"></i>
+
+                        <!-- Destination from first user input -->
+                         <%= PlanList[0].destination %>
+                    </div>
+                <% } %>
+
+                <!-- Add Plan Button -->
+                 <a href="/plans/add" class="btn btn-dark mt-5" role="button">
                 <i class="fas fa fa-plus-circle"></i> Add Plan
                 </a>
             </h1>
             <br>
-            <table class="table table-bordered">
+
+            <!-- Itinerary Table -->
+            <table class="table table-hover table-bordered">
+
                 <!--Header Row-->
                 <tr class="d-flexa" style="background-color: #B5C7D0;">
-                    <th class="text-center col-3">Plan</th>
+                    <th class="text-center col-2">Plan</th>
                     <th class="text-center col-2">Date</th>
-                    <th class="text-center col-2">Time</th>
-                    <th class="text-center col-3">Notes</th>
+                    <th class="text-center col-1">Time</th>
+                    <th class="text-center col-1">Notes</th>
+                    <th class="text-center col-1">Edit</th>
+                    <th class="text-center col-2">Delete</th>
+
+
                 </tr>
 
                 <!--for/while loop-->
                 <% for (let count = 0; count < PlanList.length; count++) { %>
-                   <tr class="d-flexa">
+                   <tr class="text-center">
                         <td class="text-center col-3"><%= PlanList[count].plan %></td>
                         <td class="text-center col-2"><%= PlanList[count].date %></td>
                         <td class="text-center col-2"><%= PlanList[count].time %></td>
                         <td class="text-center col-3"><%= PlanList[count].notes %></td>
 
-                        <td class="text-center col-1">
+                        <td class="text-center col-1" >
                             <a href="/plans/edit/<%= PlanList[count]._id %>" class="btn btn-outline-primary btn-sm">
                                 <i class="fas fa-pencil-alt"></i> Edit
                             </a>
                         </td>
 
+                        <!-- Delete Button-->
                         <td class="text-center col-1">
                             <a href="/plans/delete/<%= PlanList[count]._id %>" class="btn btn-outline-danger btn-sm">
-                                <i class="fas fa-trash-alt"></i> Delete
+                                </i> Delete
                             </a>
                         </td>
                     </tr>

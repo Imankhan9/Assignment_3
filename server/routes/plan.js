@@ -12,6 +12,7 @@ router.get('/',async(req,res,next)=>{
        res.render('Plans/list', {
         title: 'Itinerary Planner',
         PlanList:PlanList
+        
     })
     }
     catch(err)
@@ -46,6 +47,7 @@ router.post('/add',async(req,res,next)=>{
     try
     {
         let newPlan = new Plan({
+            "destination": req.body.destination,
             "plan": req.body.plan,
             "date": req.body.date,
             "time": req.body.time,
@@ -92,6 +94,7 @@ router.post('/edit/:id',async(req,res,next)=>{
         let id = req.params.id;
         let updatePlan = Plan({
             "_id": id,
+            "destination": req.body.destination, 
             "plan": req.body.plan,
             "date": req.body.date,
             "time": req.body.time,

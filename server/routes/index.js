@@ -21,4 +21,7 @@ router.get('/itinerary', function(req, res, next) {
     title: 'Itinerary Planner',
   });
 });
+
+
+
 module.exports = router;

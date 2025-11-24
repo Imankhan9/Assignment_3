@@ -1,13 +1,15 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/main_nav.ejs %>
 
-<!-- Adding the assignment -->
+<!-- Edit Existing Itinerary information -->
 <div class ="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
+
+        <!-- Page Title -->
         <h1><%= title %></h1>
 
-        <form class="form" method="post">
+            <!-- Plan Field -->
             <div class="form-group">
                 <label for="planTextfield"> Plan</label>
                 <input type="text" class="form-control"
@@ -18,6 +20,7 @@
                 required>
             </div>
 
+            <!-- Date Field -->
             <div class="form-group">
                 <label for="dateTextfield"> Date</label>
                 <input type="text" class="form-control"
@@ -28,6 +31,7 @@
                  required>
             </div>
 
+            <!-- Time Field -->
             <div class="form-group">
                 <label for="timeTextfield"> Time</label>
                 <input type="text" class="form-control"
@@ -38,6 +42,7 @@
                 required>
             </div>
 
+            <!-- Notes Field -->
             <div class="form-group">
                 <label for="notesTextfield"> Notes</label>
                 <input type="text" class="form-control"
@@ -48,10 +53,13 @@
                 required>
             </div>
 
+            <!-- Update Button: saves the edits -->
             <br>
             <button class="btn btn-primary" type="submit">
                 <i class="fas fa-edit"></i> Update
             </button>
+
+            <!-- Cancel Button -->
             <a href="/plans" class="btn btn-warning">
                 <i class="fas fa-undo"></i> Cancel
             </a>
